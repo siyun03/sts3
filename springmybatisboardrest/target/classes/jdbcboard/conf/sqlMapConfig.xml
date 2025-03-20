@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+	<properties resource="jdbcboard/prop/db.properties" />
+	
+	<settings>
+        <setting name="logImpl" value="org.apache.ibatis.logging.slf4j.Slf4jImpl"/>
+    </settings>
+	
+	<typeAliases>
+		<typeAlias type="jdbcboard.model.Article" alias="Article" />
+		<typeAlias type="jdbcboard.model.Board" alias="Board" />
+		<typeAlias type="jdbcboard.model.Member" alias="Member" />
+		<typeAlias type="jdbcboard.model.Reply" alias="Reply" />
+		<typeAlias type="jdbcboard.model.ArticleCriteria" alias="ArticleCriteria" />
+		<typeAlias type="jdbcboard.model.AttachFile" alias="AttachFile" />
+	</typeAliases>
+	
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="${JDBC_DRIVER}"/>
+				<property name="url" value="${JDBC_URL}"/>
+				<property name="username" value="${JDBC_USER}"/>
+				<property name="password" value="${JDBC_PASS}"/>
+			</dataSource>
+		</environment>
+	</environments>
+	
+	<mappers>
+		<mapper resource="jdbcboard/conf/Article.xml" />
+		<mapper resource="jdbcboard/conf/Board.xml" />
+		<mapper resource="jdbcboard/conf/Member.xml" />
+		<mapper resource="jdbcboard/conf/Reply.xml" />
+		<mapper resource="jdbcboard/conf/AttachFile.xml" />
+	</mappers>
+	
+</configuration>
+
+
+
+
+
+
+
+
+
+
+
+
+

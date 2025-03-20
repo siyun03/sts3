@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="attachfile">
+
+	<select id="selectAttachFile" parameterType="int" resultType="AttachFile">
+		SELECT * 
+		FROM ATTACHFILE 
+		WHERE 
+			AID=#{aid} 
+		ORDER BY AFID DESC
+	</select>
+	
+	<select id="getAttachFile" parameterType="int" resultType="AttachFile">
+		SELECT *
+		FROM ATTACHFILE
+		WHERE
+			AFID=#{afid}
+	</select>
+	
+	<insert id="insertAttachFile" parameterType="AttachFile">
+		INSERT INTO ATTACHFILE 
+		VALUES(SEQ_ATTACHFILE.NEXTVAL, #{afcname}, #{afsname}, 
+			SYSDATE, #{aid})
+	</insert>
+	
+	<delete id="deleteAttachFile" parameterType="int">
+		DELETE ATTACHFILE 
+		WHERE AFID=#{afid}
+	</delete>
+		
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
